@@ -28,9 +28,8 @@ jobs:
       - run: npm ci
       - run: npm run rollup
       - run: |
-          echo @thangnn:https://npm.pkg.github.com/ > dist/.npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> dist/.npmrc
-      - run: npm publish 
-        working-directory: ./dist
+          echo @thangnn:https://npm.pkg.github.com/ > .npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_TOKEN}}
