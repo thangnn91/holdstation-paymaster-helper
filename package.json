@@ -7,9 +7,7 @@
   "description": "Holdstation paymaster helper",
   "scripts": {
     "rollup": "rollup -c",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest"
   },
   "author": "YOUR_NAME",
   "license": "ISC",
