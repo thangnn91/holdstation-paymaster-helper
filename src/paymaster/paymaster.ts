@@ -8,6 +8,7 @@ export interface PaymasterProps {
   pk: string;
   paymentToken: string;
   partnerCode: string;
+  paymasterAddress?: string;
   populateTransaction: ethers.PopulatedTransaction;
 }
 
@@ -19,7 +20,7 @@ export const paymasterExecute = async (props: PaymasterProps): Promise<types.Tra
   }
 
   const signer = new Wallet(props.pk, provider);
-  const paymasterAddress = PAYMASTER_ADDRESS[props.network as keyof typeof PAYMASTER_ADDRESS];
+  const paymasterAddress = props.paymasterAddress || PAYMASTER_ADDRESS[props.network as keyof typeof PAYMASTER_ADDRESS];
 
   const gasLimit = await provider.estimateGas({ ...props.populateTransaction, from: signer.address });
   const gasPrice = await provider.getGasPrice();
