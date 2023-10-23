@@ -3,7 +3,7 @@
   "publishConfig": {
     "@thangnn:holdstation-paymaster-helper": "https://npm.pkg.github.com"
   },
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Holdstation paymaster helper",
   "scripts": {
     "rollup": "rollup -c"
